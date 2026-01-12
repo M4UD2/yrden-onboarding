@@ -250,7 +250,7 @@ function ReportActionsMenu({
       
       {/* Menu */}
       <div 
-        className="fixed bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 w-[280px]"
+        className="fixed bg-white rounded-xl shadow-2xl border border-gray-200 py-2 z-50 w-[280px] transition-all duration-300"
         style={{ 
           top: `${position.y}px`, 
           left: `${position.x}px`,
@@ -365,7 +365,7 @@ function ReportDetailsModal({
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div 
-        className="bg-white rounded-lg shadow-xl w-full max-w-7xl max-h-[90vh] flex flex-col"
+        className="bg-white rounded-xl shadow-2xl w-full max-w-7xl max-h-[90vh] flex flex-col transition-all duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -407,7 +407,7 @@ function ReportDetailsModal({
             <div className="relative">
               <button 
                 onClick={() => setAnalyzeMenuOpen(!analyzeMenuOpen)}
-                className="bg-blue-600 hover:bg-blue-700 text-white pl-2 pr-4 py-2 rounded-lg flex items-center gap-2.5 transition-colors"
+                className="bg-blue-600 hover:bg-blue-700 text-white pl-2 pr-4 py-2 rounded-lg flex items-center gap-2.5 transition-all duration-300"
               >
                 <div className="bg-white/20 backdrop-blur-sm p-1.5 rounded">
                   <BarChart3 className="w-4 h-4" />
@@ -422,7 +422,7 @@ function ReportDetailsModal({
                     className="fixed inset-0 z-40" 
                     onClick={() => setAnalyzeMenuOpen(false)}
                   />
-                  <div className="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 w-[320px]">
+                  <div className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-2xl border border-gray-200 py-2 z-50 w-[320px] transition-all duration-300">
                     <button className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors">
                       <div className="flex items-start gap-3">
                         <Database className="w-4 h-4 mt-0.5 shrink-0 text-gray-500" />
@@ -753,7 +753,7 @@ function ReportsContent() {
           <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-gray-700">
             Schedule
           </button>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300">
             <Plus className="w-4 h-4" />
             New report
           </button>
@@ -1018,7 +1018,7 @@ function FileUploadModal({ onClose, onUploadComplete }: { onClose: () => void; o
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={onClose}>
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-4xl mx-4 max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 max-h-[90vh] flex flex-col transition-all duration-300" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div>
@@ -1062,7 +1062,7 @@ function FileUploadModal({ onClose, onUploadComplete }: { onClose: () => void; o
                   {isDragging ? 'Solte o arquivo aqui' : 'Arraste e solte seu arquivo aqui'}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">ou</p>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-all duration-300">
                   Ou procure em seu computador
                 </button>
                 <div className="mt-6 text-sm text-gray-500 space-y-1">
@@ -1233,7 +1233,7 @@ function FileUploadModal({ onClose, onUploadComplete }: { onClose: () => void; o
             </button>
             <button
               onClick={handleComplete}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-all duration-300"
             >
               <Check className="w-4 h-4" />
               Concluir e Sincronizar
@@ -1449,7 +1449,7 @@ function OnboardingStep({
       <button
         onClick={!locked ? onClick : undefined}
         disabled={locked}
-        className={`w-full border rounded-lg p-4 transition-all ${getBgColor()} ${
+        className={`w-full border rounded-lg p-4 transition-all duration-300 ${getBgColor()} ${
           status === 'active' ? 'shadow-sm' : ''
         } ${isClickable ? 'group' : ''}`}
       >
@@ -1461,7 +1461,7 @@ function OnboardingStep({
                 {title}
               </h3>
               {isClickable && (
-                <ChevronRight className={`w-5 h-5 shrink-0 transition-transform ${
+                <ChevronRight className={`w-5 h-5 shrink-0 transition-all duration-300 ${
                   status === 'active' ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-600 group-hover:translate-x-0.5'
                 }`} />
               )}
@@ -1497,7 +1497,7 @@ function Sidebar({ onNavigate }: { onNavigate?: (page: string) => void }) {
       description: "Link Stripe, Zendesk, or Google Analytics",
       status: currentStep === 2 ? 'active' as const : currentStep > 2 ? 'completed' as const : 'upcoming' as const,
       showProgress: currentStep === 2,
-      progressText: "Syncing data... (approx. 60 min)",
+      progressText: "Sincronizando seus dados... (aprox. 60 min)",
       actionable: true,
       action: () => {
         if (onNavigate) onNavigate('data-sources');
@@ -1520,91 +1520,109 @@ function Sidebar({ onNavigate }: { onNavigate?: (page: string) => void }) {
   // Versão minimizada
   if (isMinimized) {
     return (
-      <div className="[grid-area:1_/_3] bg-[#fbfbfb] relative shrink-0 border-l border-gray-200 w-16 flex flex-col items-center py-6">
-        <button 
-          onClick={() => setIsMinimized(false)}
-          className="text-gray-400 hover:text-gray-600 transition-colors mb-4"
-          title="Expandir Quick Start"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <div className="flex flex-col items-center gap-4">
-          <div className="bg-blue-600 rounded-full p-2">
-            <Zap className="w-5 h-5 text-white" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <div className="w-2 h-2 rounded-full bg-blue-600"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-300"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-300"></div>
+      <TooltipProvider delayDuration={200}>
+        <div className="[grid-area:1_/_3] bg-blue-50 relative shrink-0 border-l border-blue-200 w-16 flex flex-col items-center py-6 transition-all duration-300">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button 
+                onClick={() => setIsMinimized(false)}
+                className="text-blue-400 hover:text-blue-600 transition-colors mb-4"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+            </TooltipTrigger>
+            <TooltipContent side="left" className="bg-gray-900 text-white border-gray-800">
+              <p>Expandir Quick Start</p>
+            </TooltipContent>
+          </Tooltip>
+          
+          <div className="flex flex-col items-center gap-4">
+            <div className="bg-blue-600 rounded-full p-2">
+              <Zap className="w-5 h-5 text-white" />
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className={`w-2 h-2 rounded-full ${currentStep >= 1 ? 'bg-blue-600' : 'bg-blue-300'}`}></div>
+              <div className={`w-2 h-2 rounded-full ${currentStep >= 2 ? 'bg-blue-600' : 'bg-blue-300'}`}></div>
+              <div className={`w-2 h-2 rounded-full ${currentStep >= 3 ? 'bg-blue-600' : 'bg-blue-300'}`}></div>
+            </div>
           </div>
         </div>
-      </div>
+      </TooltipProvider>
     );
   }
 
   /// Versão expandida
   return (
-    <div className="[grid-area:1_/_3] bg-[#fbfbfb] relative shrink-0 border-l border-gray-200">
-      <div className="p-6">
-        {/* Header with minimize option */}
-        <div className="flex items-start justify-between mb-6">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-blue-600" />
-              <h2 className="text-gray-900 text-lg font-semibold">Getting started</h2>
+    <TooltipProvider delayDuration={200}>
+      <div className="[grid-area:1_/_3] bg-blue-50 relative shrink-0 border-l border-blue-200 transition-all duration-300">
+        <div className="p-6 flex flex-col h-full">
+          {/* Header with minimize option */}
+          <div className="flex items-start justify-between mb-6">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <Zap className="w-5 h-5 text-blue-600" />
+                <h2 className="text-gray-900 text-lg font-semibold">Getting started</h2>
+              </div>
+              <p className="text-gray-600 text-sm max-w-xs">
+                Sincronizando seu workspace... (aprox. 60 min). Enquanto isso, explore a plataforma e inicie sua configuração
+              </p>
             </div>
-            <p className="text-gray-600 text-sm max-w-xs">
-              While your company real data is syncing (approx. 60 min), follow this onboarding to explore the platform and get your setup started
-            </p>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button 
+                  onClick={() => setIsMinimized(true)}
+                  className="text-blue-400 hover:text-blue-600 transition-colors"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="left" className="bg-gray-900 text-white border-gray-800">
+                <p>Minimizar Quick Start</p>
+              </TooltipContent>
+            </Tooltip>
           </div>
-          <button 
-            onClick={() => setIsMinimized(true)}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
-            title="Minimizar Quick Start"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
-        {/* Steps */}
-        <div className="space-y-3">
-          {steps.map((step, index) => (
-            <OnboardingStep
-              key={index}
-              step={index + 1}
-              status={step.status}
-              title={step.title}
-              description={step.description}
-              locked={step.locked}
-              waiting={step.waiting}
-              showProgress={step.showProgress}
-              progressText={step.progressText}
-              waitingText={step.waitingText}
-              onClick={() => {
-                if (step.actionable && step.action && (step.status === 'active' || step.status === 'upcoming') && !step.locked) {
-                  step.action();
-                }
-              }}
-            />
-          ))}
-        </div>
+          
+          {/* Steps */}
+          <div className="space-y-3 flex-1">
+            {steps.map((step, index) => (
+              <OnboardingStep
+                key={index}
+                step={index + 1}
+                status={step.status}
+                title={step.title}
+                description={step.description}
+                locked={step.locked}
+                waiting={step.waiting}
+                showProgress={step.showProgress}
+                progressText={step.progressText}
+                waitingText={step.waitingText}
+                onClick={() => {
+                  if (step.actionable && step.action && (step.status === 'active' || step.status === 'upcoming') && !step.locked) {
+                    step.action();
+                  }
+                }}
+              />
+            ))}
+          </div>
 
-        {/* Help Text */}
-        <div className="absolute bottom-6 left-6 right-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-    <div className="flex gap-3">
-      <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-      <div>
-        <h4 className="text-blue-900 text-sm mb-1">Need help?</h4>
-        <p className="text-blue-700 text-sm">
-          Our team is here to guide you through setup
-        </p>
-        <button className="text-blue-600 text-sm hover:underline mt-2">
-          Contact support →
-        </button>
+          {/* Help Text */}
+          <div className="mt-6 p-4 bg-blue-100 border border-blue-200 rounded-lg">
+            <div className="flex gap-3">
+              <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-blue-900 text-sm font-medium mb-1">Need help?</h4>
+                <p className="text-blue-700 text-sm">
+                  Our team is here to guide you through setup
+                </p>
+                <button className="text-blue-600 text-sm hover:underline mt-2 font-medium">
+                  Contact support →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-      </div>
-    </div>
+    </TooltipProvider>
   );
 }
 
@@ -1647,7 +1665,7 @@ function CoachMark({ onDismiss }: { onDismiss: () => void }) {
   
   {/* Title */}
   <h2 className="text-gray-900 text-center mb-6">
-    Welcome to Yrden, Sofia!
+    Bem-vinda ao Yrden, Sofia!
   </h2>
   
   {/* Content sections */}
@@ -1655,7 +1673,7 @@ function CoachMark({ onDismiss }: { onDismiss: () => void }) {
     {/* What is the product */}
     <div>
       <p className="text-gray-700 text-sm leading-relaxed">
-        Yrden is Momentum's new data platform that unifies all your business data into a single, reliable source of truth.
+        O Yrden é a nova plataforma de dados da Momentum que unifica todos os seus dados de negócio em uma única fonte confiável.
       </p>
     </div>
     
@@ -1665,7 +1683,7 @@ function CoachMark({ onDismiss }: { onDismiss: () => void }) {
         <Clock className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
         <div>
           <p className="text-blue-900 text-sm">
-            <span className="font-medium">We're already syncing your real data</span> from your connected sources (approx. 60 min).
+            <span className="font-medium">Estamos sincronizando seus dados reais</span> das suas fontes conectadas (aprox. 60 min).
           </p>
         </div>
       </div>
@@ -1674,7 +1692,7 @@ function CoachMark({ onDismiss }: { onDismiss: () => void }) {
     {/* Next action */}
     <div>
       <p className="text-gray-700 text-sm leading-relaxed">
-        While you wait, follow our guide to start exploring the platform and get familiar with key features.
+        Enquanto aguarda, siga nosso guia para explorar a plataforma e se familiarizar com os principais recursos.
       </p>
     </div>
   </div>
@@ -1682,9 +1700,9 @@ function CoachMark({ onDismiss }: { onDismiss: () => void }) {
   {/* CTA Button */}
   <button
     onClick={onDismiss}
-    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors w-full text-center"
+    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 w-full text-center"
   >
-    OK, Start Onboarding
+    Explore o poder do Yrden
   </button>
 </div>
       </div>
@@ -1742,7 +1760,7 @@ function WelcomeScreen({ onComplete }: { onComplete: () => void }) {
         </div>
 
         {/* Welcome Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+        <div className="bg-white rounded-xl shadow-2xl p-8 border border-gray-100 transition-all duration-300">
           {/* Header */}
           <div className="text-center mb-6">
             <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-full mb-4">
@@ -1760,7 +1778,7 @@ function WelcomeScreen({ onComplete }: { onComplete: () => void }) {
               <button
                 onClick={handleMicrosoftLogin}
                 disabled={isLoading}
-                className="w-full bg-white border-2 border-gray-300 hover:border-gray-400 text-gray-700 py-3 rounded-lg flex items-center justify-center gap-3 transition-colors mb-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-white border-2 border-gray-300 hover:border-gray-400 text-gray-700 py-3 rounded-lg flex items-center justify-center gap-3 transition-all duration-300 mb-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
@@ -1790,7 +1808,7 @@ function WelcomeScreen({ onComplete }: { onComplete: () => void }) {
               {/* Create Password Button */}
               <button
     onClick={() => setIsCreatingPassword(true)}
-    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors text-center"
+    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-all duration-300 text-center"
 >
     Create password
 </button>
@@ -1892,7 +1910,7 @@ function WelcomeScreen({ onComplete }: { onComplete: () => void }) {
                   <button
                     onClick={handleCreatePassword}
                     disabled={isLoading || !password || !confirmPassword}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     {isLoading ? (
                       <>

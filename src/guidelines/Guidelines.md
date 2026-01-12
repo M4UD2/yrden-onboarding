@@ -1,62 +1,26 @@
-**Add your own guidelines here**
-<!--
+# Yrden Design Guidelines
 
-System Guidelines
+Diretrizes para manter a consistência e autoridade visual da plataforma de BI Yrden, focando na jornada da Sofia.
 
-Use this file to provide the AI with rules and guidelines you want it to follow.
-This template outlines a few examples of things you can add. You can add your own sections and format it to suit your needs
+## 1. Princípios de Layout
+* **Estrutura de 3 Colunas:** Manter sempre a hierarquia `Navegação (80px/240px) | Conteúdo Principal | Sidebar de Onboarding`.
+* **Densidade de Dados:** Utilizar `text-sm` (14px) em tabelas para suportar grandes volumes de informação sem poluição.
+* **Espaçamento Premium:** Headers de página devem usar `px-10 py-8` para dar respiro e foco estratégico antes da densidade técnica.
 
-TIP: More context isn't always better. It can confuse the LLM. Try and add the most important rules you need
+## 2. Componentes e Interação
+* **Estados de Dados (Non-Generic):** Evitar apenas cores. Usar ícones semânticos para status:
+  * `Processing`: Loader animado + Azul.
+  * `Failed`: AlertCircle + Vermelho.
+  * `Saved/Success`: FileText/Check + Azul/Verde.
+* **Feedback Contextual:** Todo o elemento colapsado ou ícone abstrato deve ter `Tooltip` com `delayDuration={200}`.
+* **Suavidade:** Transições de colapso de menu e modais devem usar `transition-all duration-300`.
 
-# General guidelines
+## 3. Identidade e Estilo
+* **Paleta de Ação:** Usar `blue-600` para ações primárias e `blue-50` para áreas de suporte e aprendizagem (Onboarding).
+* **CoachMarks Humano:** Modais de boas-vindas devem usar cantos arredondados (`rounded-xl`) e sombras profundas (`shadow-2xl`) para contrastar com a rigidez da grelha de dados.
+* **Iconografia:** Uso exclusivo da biblioteca `lucide-react` para manter a consistência técnica.
 
-Any general rules you want the AI to follow.
-For example:
-
-* Only use absolute positioning when necessary. Opt for responsive and well structured layouts that use flexbox and grid by default
-* Refactor code as you go to keep code clean
-* Keep file sizes small and put helper functions and components in their own files.
-
---------------
-
-# Design system guidelines
-Rules for how the AI should make generations look like your company's design system
-
-Additionally, if you select a design system to use in the prompt box, you can reference
-your design system's components, tokens, variables and components.
-For example:
-
-* Use "Inter" as the primary typeface for all UI elements
-* Use a base font-size of 14px
-* Date formats should always be in the format “Jun 10”
-* The bottom toolbar should only ever have a maximum of 4 items
-* Never use the floating action button with the bottom toolbar
-* Chips should always come in sets of 3 or more
-* Don't use a dropdown if there are 2 or fewer options
-
-You can also create sub sections and add more specific details
-For example:
-
-
-## Button
-The Button component is a fundamental interactive element in our design system, designed to trigger actions or navigate
-users through the application. It provides visual feedback and clear affordances to enhance user experience.
-
-### Usage
-Buttons should be used for important actions that users need to take, such as form submissions, confirming choices,
-or initiating processes. They communicate interactivity and should have clear, action-oriented labels.
-
-### Variants
-* Primary Button
-  * Purpose : Used for the main action in a section or page
-  * Visual Style : Bold, filled with the primary brand color
-  * Usage : One primary button per section to guide users toward the most important action
-* Secondary Button
-  * Purpose : Used for alternative or supporting actions
-  * Visual Style : Outlined with the primary color, transparent background
-  * Usage : Can appear alongside a primary button for less important actions
-* Tertiary Button
-  * Purpose : Used for the least important actions
-  * Visual Style : Text-only with no border, using primary color
-  * Usage : For actions that should be available but not emphasized
--->
+## 4. UX Writing & Estratégia
+* **Transparência Técnica:** Nunca esconder a espera de 60 minutos. Transformar a limitação em valor: "Sincronizando seu workspace..." em vez de "Carregando...".
+* **Foco no Aha! Moment:** Priorizar verbos de benefício no Onboarding. Ex: "Explore o poder do Yrden" em vez de "Abrir Demo".
+* **Recompensa > Esforço:** Garantir que a Sofia veja um relatório pronto antes de pedir que conecte uma fonte de dados real.
