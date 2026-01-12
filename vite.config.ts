@@ -41,7 +41,6 @@
         '@radix-ui/react-dialog@1.1.6': '@radix-ui/react-dialog',
         '@radix-ui/react-context-menu@2.2.6': '@radix-ui/react-context-menu',
         '@radix-ui/react-collapsible@1.1.3': '@radix-ui/react-collapsible',
-        '@radix-ui/react-checkbox@1.1.4': '@radix-ui/react-checkbox',
         '@radix-ui/react-avatar@1.1.3': '@radix-ui/react-avatar',
         '@radix-ui/react-aspect-ratio@1.1.2': '@radix-ui/react-aspect-ratio',
         '@radix-ui/react-alert-dialog@1.1.6': '@radix-ui/react-alert-dialog',
