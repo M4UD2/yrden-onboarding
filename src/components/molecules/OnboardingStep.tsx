@@ -1,6 +1,6 @@
 import * as React from "react";
 import { CheckCircle2, PlayCircle, Lock } from "lucide-react";
-import { cn } from "../ui/utils";
+import { cn } from "../../utils";
 
 interface OnboardingStepProps {
   id: number;

@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { Filter, Download, Trash2, Plus, ChevronLeft, ChevronRight, MoreVertical } from "lucide-react";
 import { SearchInput } from "../../../components/molecules/SearchInput";
 import { StatusBadge } from "../../../components/molecules/StatusBadge";
-import { Button } from "../../../components/ui/button";
+import { Button } from "../../../components/atoms/Button";
 
 // Lazy load heavy components
 const ReportActionsMenu = lazy(() => import("../components/ReportActionsMenu"));

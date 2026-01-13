@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FileText, Loader, AlertCircle, Calendar } from "lucide-react";
-import { Badge } from "../ui/badge";
+import { Badge } from "../atoms/Badge";
 
 interface StatusBadgeProps {
   status: string;

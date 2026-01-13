@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import { ChevronLeft, ChevronRight, LogOut } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../../components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../../components/atoms/Tooltip";
 import { navItems, bottomItems } from "../data/mockData";
 import svgPaths from "../../../imports/svg-d8uyy9xgj3";
 
