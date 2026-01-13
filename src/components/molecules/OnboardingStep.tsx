@@ -13,9 +13,10 @@ interface OnboardingStepProps {
   waitingText?: string;
   onClick?: () => void;
   className?: string;
+  key?: string | number;
 }
 
-const OnboardingStep: React.FC<OnboardingStepProps> = ({
+const OnboardingStep = ({
   title,
   description,
   status = 'upcoming',
@@ -23,7 +24,7 @@ const OnboardingStep: React.FC<OnboardingStepProps> = ({
   waitingText,
   onClick,
   className
-}) => {
+}: OnboardingStepProps) => {
   const getIcon = () => {
     if (status === 'locked') return <Lock className="w-5 h-5 text-disabled-foreground" />;
     if (status === 'completed') return <CheckCircle2 className="w-5 h-5 text-success" />;
