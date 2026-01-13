@@ -1,11 +1,10 @@
-import OnboardingExperienceRedesign from "./components/OnboardingExperienceRedesign";
-import { Toaster } from "sonner@2.0.3";
+// Em vez de importar o arquivo antigo, importe o novo:
+import OnboardingLayout from "./features/onboarding/OnboardingLayout";
 
 export default function App() {
   return (
     <>
-      <OnboardingExperienceRedesign />
-      <Toaster position="top-right" richColors />
+      <OnboardingLayout />
     </>
   );
 }
