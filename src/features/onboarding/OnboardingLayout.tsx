@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+﻿import React, { useState } from "react";
 import { Toaster } from "sonner";
 import Navigation from "./components/Navigation";
 import Sidebar from "./components/Sidebar";
@@ -33,25 +33,25 @@ export default function OnboardingLayout() {
   };
 
   return (
-    <div className="bg-white relative w-full h-full" style={gridLayout}>
-      
+    <div className="bg-background relative w-full h-full" style={gridLayout}>
+
       {/* 1. NAVEGAÇÃO (Esquerda) */}
-      <Navigation 
-        currentPage={currentPage} 
+      <Navigation
+        currentPage={currentPage}
         onNavigate={setCurrentPage}
         isExpanded={navExpanded}
         onToggleExpanded={() => setNavExpanded(!navExpanded)}
       />
-      
+
       {/* 2. ÁREA DE CONTEÚDO (Centro) */}
-      <div className="relative overflow-hidden bg-white h-full">
+      <div className="relative overflow-hidden bg-background h-full">
         {currentPage === 'reports' && <ReportsView />}
-        
+
         {currentPage === 'data-sources' && <DataSourcesView />}
-        
+
         {/* Placeholder para Schedules (se não houver view específica ainda) */}
         {currentPage === 'schedules' && (
-           <div className="flex items-center justify-center h-full text-gray-400">
+           <div className="flex items-center justify-center h-full text-muted-foreground">
              Schedules View (Em construção)
            </div>
         )}

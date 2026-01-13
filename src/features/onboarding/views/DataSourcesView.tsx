@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { toast } from "sonner";
 import { 
   Search, FileText, Smartphone, Cloud, Database, Upload, X, Check, 
@@ -98,13 +98,13 @@ function FileUploadModal({ onClose, onUploadComplete }: { onClose: () => void; o
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={onClose}>
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 max-h-[90vh] flex flex-col transition-all duration-300" onClick={(e) => e.stopPropagation()}>
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+      <div className="bg-surface rounded-xl shadow-2xl w-full max-w-4xl mx-4 max-h-[90vh] flex flex-col transition-all duration-300" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between p-6 border-b border-border">
           <div>
-            <h2 className="text-gray-900 font-semibold text-lg">{step === 1 ? 'Adicionar seu arquivo' : 'Configurar seus dados'}</h2>
-            <p className="text-gray-600 text-sm mt-1">{step === 1 ? 'Faça upload de arquivos CSV, Excel (.xlsx) ou JSON' : 'Revise e confirme as configurações dos seus dados'}</p>
+            <h2 className="text-foreground font-semibold text-lg">{step === 1 ? 'Adicionar seu arquivo' : 'Configurar seus dados'}</h2>
+            <p className="text-muted-foreground text-sm mt-1">{step === 1 ? 'Faça upload de arquivos CSV, Excel (.xlsx) ou JSON' : 'Revise e confirme as configurações dos seus dados'}</p>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600"><X className="w-5 h-5" /></button>
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground"><X className="w-5 h-5" /></button>
         </div>
 
         <div className="p-6 overflow-y-auto flex-1">
@@ -225,11 +225,11 @@ export default function DataSourcesView() {
   ];
 
   return (
-    <div className="[grid-area:1_/_2] relative shrink-0 bg-white overflow-y-auto h-full">
+    <div className="[grid-area:1_/_2] relative shrink-0 bg-surface overflow-y-auto h-full">
       <div className="px-10 py-8">
         <div className="mb-8">
-          <h1 className="text-gray-900 mb-1 text-2xl font-semibold">Data Sources</h1>
-          <p className="text-gray-600">Connect your data simply and start creating reports</p>
+          <h1 className="text-foreground mb-1 text-2xl font-semibold">Data Sources</h1>
+          <p className="text-muted-foreground">Connect your data simply and start creating reports</p>
         </div>
 
         <div className="relative mb-8">
