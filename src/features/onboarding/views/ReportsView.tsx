@@ -7,8 +7,8 @@ import { StatusBadge } from "../../../components/molecules/StatusBadge";
 import { Button } from "../../../components/atoms/Button";
 
 // Lazy load heavy components
-const ReportActionsMenu = lazy(() => import("../components/ReportActionsMenu"));
-const ReportDetailsModal = lazy(() => import("../components/ReportDetailsModal"));
+const ReportActionsMenu = lazy(() => import("../../../components/organisms/ReportActionsMenu"));
+const ReportDetailsModal = lazy(() => import("../../../components/organisms/ReportDetailsModal"));
 
 // Types
 interface Report {

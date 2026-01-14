@@ -1,10 +1,10 @@
 ﻿import React, { useState } from "react";
 import { Toaster } from "sonner";
-import Navigation from "./components/Navigation";
-import Sidebar from "./components/Sidebar";
+import Navigation from "../../components/organisms/Navigation";
+import Sidebar from "../../components/organisms/Sidebar";
 import ReportsView from "./views/ReportsView";
 import DataSourcesView from "./views/DataSourcesView"; // Este será o próximo arquivo a criar
-import CoachMark from "./components/CoachMark"; // Opcional: Se você extraiu o CoachMark
+import CoachMark from "../../components/organisms/CoachMark"; // Opcional: Se você extraiu o CoachMark
 
 export default function OnboardingLayout() {
   // --- MODO DIRETOR 🎬 ---
