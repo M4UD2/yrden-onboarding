@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "../../utils";
+import { cn } from "../../../utils";
 
 interface BadgeProps {
   variant?: "default" | "secondary" | "destructive" | "outline" | "success" | "warning" | "info";
